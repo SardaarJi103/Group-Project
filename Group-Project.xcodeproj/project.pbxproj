@@ -16,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF807D0D27F3CE30009839A3 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		AF807D0E27F3CF85009839A3 /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg2.png; sourceTree = "<group>"; };
 		AFA96E6B27F3C8E900A63A60 /* Group-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Group-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA96E6E27F3C8E900A63A60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFA96E7027F3C8E900A63A60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,15 +58,57 @@
 		AFA96E6D27F3C8E900A63A60 /* Group-Project */ = {
 			isa = PBXGroup;
 			children = (
-				AFA96E6E27F3C8E900A63A60 /* AppDelegate.swift */,
-				AFA96E7027F3C8E900A63A60 /* SceneDelegate.swift */,
-				AFA96E7227F3C8E900A63A60 /* ViewController.swift */,
-				AFA96E7427F3C8E900A63A60 /* Main.storyboard */,
-				AFA96E7727F3C8EA00A63A60 /* Assets.xcassets */,
-				AFA96E7927F3C8EA00A63A60 /* LaunchScreen.storyboard */,
+				AFA96E8627F3C91900A63A60 /* Classes */,
+				AFA96E8527F3C91000A63A60 /* ViewControllers */,
+				AFA96E8427F3C90700A63A60 /* Storyboards */,
+				AFA96E8327F3C8FE00A63A60 /* Images */,
+				AFA96E8227F3C8F200A63A60 /* Database */,
 				AFA96E7C27F3C8EA00A63A60 /* Info.plist */,
 			);
 			path = "Group-Project";
+			sourceTree = "<group>";
+		};
+		AFA96E8227F3C8F200A63A60 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		AFA96E8327F3C8FE00A63A60 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AF807D0E27F3CF85009839A3 /* bg2.png */,
+				AF807D0D27F3CE30009839A3 /* bg.png */,
+				AFA96E7727F3C8EA00A63A60 /* Assets.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		AFA96E8427F3C90700A63A60 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AFA96E7927F3C8EA00A63A60 /* LaunchScreen.storyboard */,
+				AFA96E7427F3C8E900A63A60 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		AFA96E8527F3C91000A63A60 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AFA96E7227F3C8E900A63A60 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AFA96E8627F3C91900A63A60 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AFA96E7027F3C8E900A63A60 /* SceneDelegate.swift */,
+				AFA96E6E27F3C8E900A63A60 /* AppDelegate.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
