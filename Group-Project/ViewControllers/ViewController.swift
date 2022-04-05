@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         if retrunCode == false {
             retrunMSG = "Not loggedIn"
         }else{
-            performSegue(withIdentifier: "LoginToHome", sender: self)
+            performSegue(withIdentifier: "LoginToNavigation", sender: self)
 
         }
         

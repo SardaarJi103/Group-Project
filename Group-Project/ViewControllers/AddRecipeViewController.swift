@@ -15,6 +15,7 @@ class AddRecipeViewController: UIViewController,UIImagePickerControllerDelegate,
     @IBOutlet var rDesc : UITextView!
     @IBOutlet var rLink:UITextField!
     
+    var imageStringValue : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,7 @@ class AddRecipeViewController: UIViewController,UIImagePickerControllerDelegate,
             
 //           imageValue = image
             
-//            let imageStringData = convertImageToBase64(m : image)
+          imageStringValue = convertImageToBase64(m : image)
 //            print("Image string value is :     \(imageStringData)")
             
 //            imageView2.image = convertStringToImage(m: imageStringData)
@@ -53,13 +54,47 @@ class AddRecipeViewController: UIViewController,UIImagePickerControllerDelegate,
         //        imageView.image = imag(
         picker.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func addRecipe(sender:UIButton){
+        let recipe : Recipe = Recipe.init()
+        
+        recipe.initWithData(theRow: 0, theRecipeName: rName.text!, theRecipeImage: imageStringValue, theRecipeDesc: rDesc.text!, theRecipeLink: rLink.text!)
+
+        print("Recipe image string value is   :   " + recipe.recipeImage! + " Recipe Link is :   " + recipe.recipeLink!)
+        
+        let mainDelegate = UIApplication.shared.delegate as! AppDelegate
+        let retrunCode = mainDelegate.insertIntoRecipes(recipes: recipe)
+        var retrunMSG : String = "Recipe added"
+
+        
+        if retrunCode == false {
+            retrunMSG = "Recipe not aded"
+        }
+        else{
+            retrunMSG = "Recipe Added"
+        }
+        
+        let alertController = UIAlertController(title: "SQL Lite add", message: retrunMSG, preferredStyle: .alert)
+    
+    
+        let cancelAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true)
+    }
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
     
+    func convertImageToBase64(m : UIImage) -> String {
+        let data = m.pngData()!
+        return data.base64EncodedString(options: Data.Base64EncodingOptions.lineLength64Characters)
+    }
+    
 //    func convertImageToBase64(m : UIImage) -> String {
 //        let data = m.pngData()!
-//        return data.base64EncodedString(options: Data.Base64EncodingOptions.lineLength64Characters)
+//        return data.base64EncodedString(options: Data.Base64DecodingOptions.lineLength64Characters)
 //    }
 //    func convertStringToImage(m : String) ->UIImage {
 //        let data2 = Data(base64Encoded: m,options: Data.Base64DecodingOptions.ignoreUnknownCharacters)!

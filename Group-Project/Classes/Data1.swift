@@ -1,13 +1,14 @@
 //
-//  Data.swift
+//  Data1.swift
 //  Group-Project
 //
-//  Created by  on 2022-03-29.
+//  Created by  on 2022-03-30.
 //
 
 import UIKit
 
-class Data: NSObject {
+class Data1: NSObject {
+
     var id: Int?
     var firstname : String?
     

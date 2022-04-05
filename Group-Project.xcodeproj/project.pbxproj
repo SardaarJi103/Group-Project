@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF5D0A8427F672C300D2B02B /* DatabaseFile.db in Resources */ = {isa = PBXBuildFile; fileRef = AF5D0A8327F672C300D2B02B /* DatabaseFile.db */; };
+		AF5D0A8627F6775100D2B02B /* SiteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5D0A8527F6775100D2B02B /* SiteCell.swift */; };
 		AF807D1027F3F7C9009839A3 /* bg4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF807D0F27F3F7C9009839A3 /* bg4.jpg */; };
 		AF807D1227F3F835009839A3 /* bg5.png in Resources */ = {isa = PBXBuildFile; fileRef = AF807D1127F3F835009839A3 /* bg5.png */; };
 		AF807D1427F3F991009839A3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF807D1327F3F991009839A3 /* RegisterViewController.swift */; };
-		AF807D1627F3FAB8009839A3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF807D1527F3FAB8009839A3 /* Data.swift */; };
 		AF807D1D27F3FF7D009839A3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF807D1C27F3FF7D009839A3 /* HomeViewController.swift */; };
 		AF807D1F27F4CE7B009839A3 /* ProjectDatabase.db in Resources */ = {isa = PBXBuildFile; fileRef = AF807D1E27F4CE7B009839A3 /* ProjectDatabase.db */; };
 		AF807D2127F4D0DA009839A3 /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF807D2027F4D0DA009839A3 /* AddRecipeViewController.swift */; };
+		AF807D2327F5522B009839A3 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF807D2227F5522B009839A3 /* Recipe.swift */; };
+		AF807D2527F55657009839A3 /* Data1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF807D2427F55657009839A3 /* Data1.swift */; };
 		AFA96E6F27F3C8E900A63A60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA96E6E27F3C8E900A63A60 /* AppDelegate.swift */; };
 		AFA96E7127F3C8E900A63A60 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA96E7027F3C8E900A63A60 /* SceneDelegate.swift */; };
 		AFA96E7327F3C8E900A63A60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA96E7227F3C8E900A63A60 /* ViewController.swift */; };
@@ -23,17 +26,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF5D0A8327F672C300D2B02B /* DatabaseFile.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = DatabaseFile.db; sourceTree = "<group>"; };
+		AF5D0A8527F6775100D2B02B /* SiteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteCell.swift; sourceTree = "<group>"; };
 		AF807D0D27F3CE30009839A3 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		AF807D0E27F3CF85009839A3 /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg2.png; sourceTree = "<group>"; };
 		AF807D0F27F3F7C9009839A3 /* bg4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg4.jpg; sourceTree = "<group>"; };
 		AF807D1127F3F835009839A3 /* bg5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg5.png; sourceTree = "<group>"; };
 		AF807D1327F3F991009839A3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		AF807D1527F3FAB8009839A3 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		AF807D1A27F3FB0F009839A3 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		AF807D1B27F3FB0F009839A3 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		AF807D1C27F3FF7D009839A3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AF807D1E27F4CE7B009839A3 /* ProjectDatabase.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = ProjectDatabase.db; path = ../../../../ProjectDatabase.db; sourceTree = "<group>"; };
 		AF807D2027F4D0DA009839A3 /* AddRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeViewController.swift; sourceTree = "<group>"; };
+		AF807D2227F5522B009839A3 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		AF807D2427F55657009839A3 /* Data1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data1.swift; sourceTree = "<group>"; };
 		AFA96E6B27F3C8E900A63A60 /* Group-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Group-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA96E6E27F3C8E900A63A60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFA96E7027F3C8E900A63A60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +103,7 @@
 		AFA96E8227F3C8F200A63A60 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				AF5D0A8327F672C300D2B02B /* DatabaseFile.db */,
 				AF807D1E27F4CE7B009839A3 /* ProjectDatabase.db */,
 			);
 			path = Database;
@@ -137,9 +144,11 @@
 		AFA96E8627F3C91900A63A60 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				AF5D0A8527F6775100D2B02B /* SiteCell.swift */,
 				AFA96E7027F3C8E900A63A60 /* SceneDelegate.swift */,
 				AFA96E6E27F3C8E900A63A60 /* AppDelegate.swift */,
-				AF807D1527F3FAB8009839A3 /* Data.swift */,
+				AF807D2227F5522B009839A3 /* Recipe.swift */,
+				AF807D2427F55657009839A3 /* Data1.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -208,6 +217,7 @@
 				AFA96E7827F3C8EA00A63A60 /* Assets.xcassets in Resources */,
 				AFA96E7627F3C8E900A63A60 /* Main.storyboard in Resources */,
 				AF807D1027F3F7C9009839A3 /* bg4.jpg in Resources */,
+				AF5D0A8427F672C300D2B02B /* DatabaseFile.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,13 +228,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF807D2527F55657009839A3 /* Data1.swift in Sources */,
 				AFA96E7327F3C8E900A63A60 /* ViewController.swift in Sources */,
 				AF807D2127F4D0DA009839A3 /* AddRecipeViewController.swift in Sources */,
-				AF807D1627F3FAB8009839A3 /* Data.swift in Sources */,
 				AFA96E6F27F3C8E900A63A60 /* AppDelegate.swift in Sources */,
+				AF5D0A8627F6775100D2B02B /* SiteCell.swift in Sources */,
 				AFA96E7127F3C8E900A63A60 /* SceneDelegate.swift in Sources */,
 				AF807D1427F3F991009839A3 /* RegisterViewController.swift in Sources */,
 				AF807D1D27F3FF7D009839A3 /* HomeViewController.swift in Sources */,
+				AF807D2327F5522B009839A3 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

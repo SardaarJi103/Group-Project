@@ -7,14 +7,120 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController,UITableViewDelegate ,UITableViewDataSource,UISearchResultsUpdating, UISearchBarDelegate {
+    
+   
+    
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    let searchController = UISearchController()
+    
+    let mainDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    @IBOutlet weak var recipeTableView : UITableView!
+    var  filteredRecipes = [Recipe]()
+    
+    @IBAction func unwindToHomeViewController(sender:UIStoryboardSegue){
+        
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if(searchController.isActive){
+            return filteredRecipes.count
+        }
+        return mainDelegate.recipes.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let tableCell = tableView.dequeueReusableCell(withIdentifier: "cell") as? SiteCell ?? SiteCell(style: .default, reuseIdentifier: "cell")
+        
+        
+        let thisRecipe : Recipe!
+        if(searchController.isActive){
+            thisRecipe = filteredRecipes[indexPath.row]
+            
+            tableCell.primaryLable.text = thisRecipe.recipeName
+            tableCell.myImageView.image = convertStringToImage(m: thisRecipe.recipeImage!)
+        }
+       
+        else{
+            let rownNum = indexPath.row
+            
+            tableCell.primaryLable.text = mainDelegate.recipes[rownNum].recipeName
+            tableCell.myImageView.image = convertStringToImage(m: mainDelegate.recipes[rownNum].recipeImage!)
+        }
+        
+//        tableCell.secondaryLabel.text = mainDelegate.recipes[rownNum].recipeDescription
+//        tableCell.phoneLabel.text = mainDelegate.people[rownNum].phone
+//        tableCell.addressLabel.text = mainDelegate.people[rownNum].address
+//        tableCell.ageLabel.text = mainDelegate.people[rownNum].age
+//        tableCell.genderLabel.text = mainDelegate.people[rownNum].gender
+//        tableCell.dateLabel.text = mainDelegate.people[rownNum].datebirth
+        
+
+
+
+
+        tableCell.accessoryType = .disclosureIndicator
+        return tableCell
+    }
+    
+    
+    func convertStringToImage(m : String) ->UIImage {
+           let data2 = Data(base64Encoded: m,options: Data.Base64DecodingOptions.ignoreUnknownCharacters)!
+           return UIImage(data:data2)!
+       }
+   
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        mainDelegate.recipes = []
+        mainDelegate.readDataFromDatabase()
+         initSearchController()
+        // Do any additional setup after loading the view.
+    }
+   func initSearchController()
+    {
+        searchController.loadViewIfNeeded()
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.enablesReturnKeyAutomatically = false
+        searchController.searchBar.returnKeyType = UIReturnKeyType.done
+        definesPresentationContext = true
+        
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.searchBar.delegate = self
+        
+        
+        
+    }
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        let searchText = searchBar.text!
+        
+        filterForSearchText(searchText : searchText)
+        
+    }
+    
+    func filterForSearchText(searchText : String){
+        
+        filteredRecipes = mainDelegate.recipes.filter{
+            recipe in
+            if(searchController.searchBar.text != " "){
+                let searchTextMatch = recipe.recipeName!.lowercased().contains(searchText.lowercased())
+                return searchTextMatch
+            }else{
+                return false
+            }
+          
+        }
+        recipeTableView.reloadData()
+    }
 
     /*
     // MARK: - Navigation
