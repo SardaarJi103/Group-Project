@@ -70,6 +70,24 @@ class HomeViewController: UIViewController,UITableViewDelegate ,UITableViewDataS
         return tableCell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let rowNum = indexPath.row + 1
+
+        print(rowNum)
+        mainDelegate.readSpecificReipe(recipeId: rowNum)
+        print(mainDelegate.specificRecipe[0].recipeName)
+        
+        performSegue(withIdentifier: "HomeToViewRecipe", sender: self)
+//
+        let alertController = UIAlertController(title: "Recipe CLicked", message: mainDelegate.specificRecipe[0].recipeName, preferredStyle: .alert)
+
+
+        let cancelAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true)
+    }
+    
     
     func convertStringToImage(m : String) ->UIImage {
            let data2 = Data(base64Encoded: m,options: Data.Base64DecodingOptions.ignoreUnknownCharacters)!

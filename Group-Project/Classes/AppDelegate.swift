@@ -18,8 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var databaseName : String? = "DatabaseFile.db"
     var databasePath : String?
     var people : [Data1] = []
+    var aboutPeople : [Data1] = []
+    var likedRecipes : [String] = []
     var recipes : [Recipe] = []
-    
+    var specificRecipe : [Recipe] = []
+    var userId : Int?
+    var recipeUrl : String?
 
 
    
@@ -47,6 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func loginIntoApp(username : String, password : String) -> Bool {
+        aboutPeople.removeAll()
         var isLoggedIn : Bool = false
         var db : OpaquePointer? = nil
 
@@ -69,9 +74,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     
                     let Password2 = sqlite3_column_text(selectStatement, 4)
                     
+                    let firstname = String(cString: firstName!)
+                    let lastname = String(cString: lastName!)
+                    let email = String(cString: Email2!)
+                    let password = String(cString: Password2!)
+                    
                    print("QueryResult")
                     print("\(id) |  \(firstName) | \(Email2) | \(Password2)")
+                   
+                    let person : Data1 = Data1.init()
+
+                    person.initWithData(theRow: id, theFirstName: firstname, theLastName: lastname, theEmail: email, thePassword: password, theSubscribe: 1)
                     
+                    
+                    userId = id
+                    aboutPeople.append(person)
                     isLoggedIn = true
                     print(isLoggedIn)
                     
@@ -289,6 +306,138 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return retrunCode
         
     }
+    
+    func readSpecificReipe(recipeId : Int)
+    {
+        
+        specificRecipe.removeAll()
+        var db : OpaquePointer? = nil
+        
+        if sqlite3_open(self.databasePath, &db) == SQLITE_OK {
+            print("Success datsase connection to database at \(self.databasePath)")
+            
+            var queryStatement : OpaquePointer? = nil
+            var queryStatementString : String = "select * from recipe where id = '\(recipeId)'"
+            
+            if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK
+            {
+                while sqlite3_step(queryStatement) == SQLITE_ROW {
+                    
+                    
+                    let id : Int = Int(sqlite3_column_int(queryStatement, 0))
+
+                    let rname = sqlite3_column_text(queryStatement, 1)
+                    
+                    let rImage = sqlite3_column_text(queryStatement, 2)
+                    
+                    let rDesc = sqlite3_column_text(queryStatement, 3)
+                    
+                    let rLink = sqlite3_column_text(queryStatement, 4)
+                   
+                    
+                    
+                    let name = String(cString: rname!)
+                    let image = String(cString: rImage!)
+                    let desc = String(cString: rDesc!)
+                    let link = String(cString: rLink!)
+                   
+                    
+                    let recipee : Recipe = Recipe.init()
+
+                    recipee.initWithData(theRow: id, theRecipeName: name, theRecipeImage: image, theRecipeDesc: desc, theRecipeLink: link)
+                    
+                    
+                    specificRecipe.append(recipee)
+//                    people.append(data)
+                    print("QueryResult")
+                    print("\(id) | \(name) |  \(image)")
+                    
+                    
+
+                    
+
+                    
+                }
+                sqlite3_finalize(queryStatement)
+
+            }
+            else {
+                print("Unable to run select statement ")
+            }
+            sqlite3_close(db)
+        }
+        else {
+            print("Unable to open database")
+        }
+    }
+    
+    
+   
+    
+//    func insertIntoRecipes(recipes : Recipe) -> Bool {
+//
+//        var db : OpaquePointer? = nil
+//
+//        var retrunCode : Bool = true
+//
+//        if sqlite3_open(self.databasePath, &db) == SQLITE_OK {
+//
+//            var insertStatement : OpaquePointer? = nil
+//            var insertStatementString : String = "insert into recipe values(NULL, ?, ?, ?,?)"
+//
+//            if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
+//
+//
+//                let recipeNameStr = recipes.recipeName! as NSString
+//                let recipeImageStr = recipes.recipeImage! as NSString
+//                let recipeDescStr = recipes.recipeDescription! as NSString
+//                let recipeLinkStr = recipes.recipeLink! as NSString
+//
+//                sqlite3_bind_text(insertStatement, 1, recipeNameStr.utf8String, -1, nil)
+//                sqlite3_bind_text(insertStatement, 2,recipeImageStr.utf8String, -1, nil)
+//
+//
+//                sqlite3_bind_text(insertStatement, 3, recipeDescStr.utf8String, -1, nil)
+//                sqlite3_bind_text(insertStatement, 4, recipeLinkStr.utf8String, -1, nil)
+//
+//
+//
+//
+//
+//
+//                if sqlite3_step(insertStatement) == SQLITE_DONE {
+//                    print()
+//
+//                    let rowId = sqlite3_last_insert_rowid(db)
+//                    print("Successfully inserted row \(rowId)")
+//                }
+//                else{
+//                    print("Could not insert row")
+//                    retrunCode = false
+//                }
+//                sqlite3_finalize(insertStatement)
+//
+//
+//
+//
+//
+//
+//
+//            }else{
+//                print("Insert Statement Could not be prepared")
+//                retrunCode = false
+//            }
+//            sqlite3_close(db)
+//        }
+//        else{
+//            print("Unable to open database")
+//            retrunCode = false
+//        }
+//
+//        return retrunCode
+//
+//    }
+//
    
     
     func checkAndCreateDatabse()
