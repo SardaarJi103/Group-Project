@@ -10,7 +10,6 @@
 		AF5D0A8427F672C300D2B02B /* DatabaseFile.db in Resources */ = {isa = PBXBuildFile; fileRef = AF5D0A8327F672C300D2B02B /* DatabaseFile.db */; };
 		AF5D0A8627F6775100D2B02B /* SiteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5D0A8527F6775100D2B02B /* SiteCell.swift */; };
 		AF5D0A88280B3F9E00D2B02B /* ViewRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5D0A87280B3F9E00D2B02B /* ViewRecipeViewController.swift */; };
-		AF5D0A8A280B7F7900D2B02B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5D0A89280B7F7900D2B02B /* SceneDelegate.swift */; };
 		AF5D0A8C280B805100D2B02B /* FavouriteRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5D0A8B280B805100D2B02B /* FavouriteRecipeViewController.swift */; };
 		AF5D0A8E280B842500D2B02B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5D0A8D280B842500D2B02B /* AboutViewController.swift */; };
 		AF5D0A90280B8DE300D2B02B /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5D0A8F280B8DE300D2B02B /* WebViewViewController.swift */; };
@@ -18,7 +17,6 @@
 		AF807D1227F3F835009839A3 /* bg5.png in Resources */ = {isa = PBXBuildFile; fileRef = AF807D1127F3F835009839A3 /* bg5.png */; };
 		AF807D1427F3F991009839A3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF807D1327F3F991009839A3 /* RegisterViewController.swift */; };
 		AF807D1D27F3FF7D009839A3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF807D1C27F3FF7D009839A3 /* HomeViewController.swift */; };
-		AF807D1F27F4CE7B009839A3 /* ProjectDatabase.db in Resources */ = {isa = PBXBuildFile; fileRef = AF807D1E27F4CE7B009839A3 /* ProjectDatabase.db */; };
 		AF807D2127F4D0DA009839A3 /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF807D2027F4D0DA009839A3 /* AddRecipeViewController.swift */; };
 		AF807D2327F5522B009839A3 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF807D2227F5522B009839A3 /* Recipe.swift */; };
 		AF807D2527F55657009839A3 /* Data1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF807D2427F55657009839A3 /* Data1.swift */; };
@@ -27,13 +25,13 @@
 		AFA96E7627F3C8E900A63A60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA96E7427F3C8E900A63A60 /* Main.storyboard */; };
 		AFA96E7827F3C8EA00A63A60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA96E7727F3C8EA00A63A60 /* Assets.xcassets */; };
 		AFA96E7B27F3C8EA00A63A60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA96E7927F3C8EA00A63A60 /* LaunchScreen.storyboard */; };
+		F4097970280B94A00056A850 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F409796F280B94A00056A850 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AF5D0A8327F672C300D2B02B /* DatabaseFile.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = DatabaseFile.db; sourceTree = "<group>"; };
 		AF5D0A8527F6775100D2B02B /* SiteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteCell.swift; sourceTree = "<group>"; };
 		AF5D0A87280B3F9E00D2B02B /* ViewRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRecipeViewController.swift; sourceTree = "<group>"; };
-		AF5D0A89280B7F7900D2B02B /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = ../../../../.Trash/SceneDelegate.swift; sourceTree = "<group>"; };
 		AF5D0A8B280B805100D2B02B /* FavouriteRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteRecipeViewController.swift; sourceTree = "<group>"; };
 		AF5D0A8D280B842500D2B02B /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		AF5D0A8F280B8DE300D2B02B /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
@@ -45,7 +43,6 @@
 		AF807D1A27F3FB0F009839A3 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		AF807D1B27F3FB0F009839A3 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		AF807D1C27F3FF7D009839A3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		AF807D1E27F4CE7B009839A3 /* ProjectDatabase.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = ProjectDatabase.db; path = ../../../../ProjectDatabase.db; sourceTree = "<group>"; };
 		AF807D2027F4D0DA009839A3 /* AddRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeViewController.swift; sourceTree = "<group>"; };
 		AF807D2227F5522B009839A3 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		AF807D2427F55657009839A3 /* Data1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data1.swift; sourceTree = "<group>"; };
@@ -56,6 +53,7 @@
 		AFA96E7727F3C8EA00A63A60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFA96E7A27F3C8EA00A63A60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFA96E7C27F3C8EA00A63A60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F409796F280B94A00056A850 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = "../../../../../Downloads/Group-Project/Group-Project/Classes/SceneDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				AF5D0A8327F672C300D2B02B /* DatabaseFile.db */,
-				AF807D1E27F4CE7B009839A3 /* ProjectDatabase.db */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -156,7 +153,7 @@
 		AFA96E8627F3C91900A63A60 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				AF5D0A89280B7F7900D2B02B /* SceneDelegate.swift */,
+				F409796F280B94A00056A850 /* SceneDelegate.swift */,
 				AF5D0A8527F6775100D2B02B /* SiteCell.swift */,
 				AFA96E6E27F3C8E900A63A60 /* AppDelegate.swift */,
 				AF807D2227F5522B009839A3 /* Recipe.swift */,
@@ -225,7 +222,6 @@
 			files = (
 				AF807D1227F3F835009839A3 /* bg5.png in Resources */,
 				AFA96E7B27F3C8EA00A63A60 /* LaunchScreen.storyboard in Resources */,
-				AF807D1F27F4CE7B009839A3 /* ProjectDatabase.db in Resources */,
 				AFA96E7827F3C8EA00A63A60 /* Assets.xcassets in Resources */,
 				AFA96E7627F3C8E900A63A60 /* Main.storyboard in Resources */,
 				AF807D1027F3F7C9009839A3 /* bg4.jpg in Resources */,
@@ -247,8 +243,8 @@
 				AF5D0A8C280B805100D2B02B /* FavouriteRecipeViewController.swift in Sources */,
 				AF5D0A8627F6775100D2B02B /* SiteCell.swift in Sources */,
 				AF5D0A8E280B842500D2B02B /* AboutViewController.swift in Sources */,
-				AF5D0A8A280B7F7900D2B02B /* SceneDelegate.swift in Sources */,
 				AF5D0A90280B8DE300D2B02B /* WebViewViewController.swift in Sources */,
+				F4097970280B94A00056A850 /* SceneDelegate.swift in Sources */,
 				AF807D1427F3F991009839A3 /* RegisterViewController.swift in Sources */,
 				AF807D1D27F3FF7D009839A3 /* HomeViewController.swift in Sources */,
 				AF807D2327F5522B009839A3 /* Recipe.swift in Sources */,
